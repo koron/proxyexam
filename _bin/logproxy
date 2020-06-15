@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eu
+
+version=$1 ; shift
+
+if [ ! -d "_log/${version}" ] ; then
+  echo "not released yet: ${version}"
+  exit 1
+fi
+
+curl -s "https://proxy.golang.org/github.com/koron/proxyexam/@v/list" -o "_log/${version}/list.txt"
+curl -s "https://proxy.golang.org/github.com/koron/proxyexam/@latest" -o "_log/${version}/latest.json"
