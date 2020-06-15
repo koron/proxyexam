@@ -9,3 +9,12 @@ sed -i -e "s!return \"[^\"]*\" // Version!return \"$version\" // Version!" proxy
 git add -u
 git commit -m "bump up version: $version"
 git tag -m "${version}: release $(git rev-parse) as ${version}"
+
+git push
+git push --tags
+
+echo "release ${version}" >> _log/log.txt
+
+mkdir -p _logs/${version}
+curl https://proxy.golang.org/github.com/koron/proxyexam/@latest -o _logs/${version}/latest.json
+curl https://proxy.golang.org/github.com/koron/proxyexam/@v/list -o _logs/${version}/list.txt
