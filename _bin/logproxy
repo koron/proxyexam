@@ -10,4 +10,13 @@ if [ ! -d "_log/${version}" ] ; then
 fi
 
 curl -s "https://proxy.golang.org/github.com/koron/proxyexam/@v/list" -o "_log/${version}/list.txt"
+
+echo "_log/${version}/list.txt"
+sort -V "_log/${version}/list.txt" | tail
+echo ""
+
 curl -s "https://proxy.golang.org/github.com/koron/proxyexam/@latest" -o "_log/${version}/latest.json"
+
+echo "_log/${version}/latest.json"
+cat "_log/${version}/latest.json"
+echo ""

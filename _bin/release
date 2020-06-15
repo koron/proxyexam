@@ -19,7 +19,7 @@ git push
 git push --tags
 
 echo "release ${version}" >> _log/log.txt
-
 mkdir -p "_log/${version}"
-curl -s "https://proxy.golang.org/github.com/koron/proxyexam/@v/list" -o "_log/${version}/list.txt"
-curl -s "https://proxy.golang.org/github.com/koron/proxyexam/@latest" -o "_log/${version}/latest.json"
+
+echo ""
+echo "${version} released"
