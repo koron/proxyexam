@@ -30,3 +30,5 @@ curl -s "https://proxy.golang.org/github.com/koron/proxyexam/@v/${version}+incom
 echo ""
 echo "_log/${version}/info.json"
 cat "_log/${version}/info.json"
+
+$(dirname "$0")/logproxy ${version}
