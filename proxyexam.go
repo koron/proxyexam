@@ -5,5 +5,5 @@ package proxyexam
 
 // Version returns current version string.
 func Version() string {
-	return "v3.2.0" // Version
+	return "v1.10.0" // Version
 }
