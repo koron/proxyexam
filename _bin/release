@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eu
+
+version=$1 ; shift
+
+sed -i -e "s!return \"[^\"]*\" // Version!return \"$version\" // Version!" proxyexam.go
+
+git add -u
+git commit -m "bump up version: $version"
+git tag -m "${version}: release $(git rev-parse) as ${version}"
