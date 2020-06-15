@@ -13,7 +13,7 @@ sed -i -e "s!return \"[^\"]*\" // Version!return \"$version\" // Version!" proxy
 
 git add -u
 git commit -m "bump up version: $version"
-git tag -m "${version}: release $(git rev-parse) as ${version}"
+git tag -m "${version}: release $(git rev-parse) as ${version}" "${version}"
 
 git push
 git push --tags
